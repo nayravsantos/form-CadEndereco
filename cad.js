@@ -17,3 +17,8 @@ const limparFormulario = () =>{
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
 
 const cepValido = (cep) => cep.length == 8 && eNumero(cep);
+
+// Função para preencher formulário como campos da API
+const preencherFormulario = (endereco) =>{
+    document.getElementById('logradouro').value = endereco.logradouro;
+}
