@@ -30,5 +30,21 @@ const preencherFormulario = (endereco) =>{
 // Função de consumo de API ViaCEP
 const pesquisarCEP = async() =>{
     limparFormulario();
-    const url = `http://viacep.com.br/ws/86087000/json/`;
+    const url = `http://viacep.com.br/ws/${cep.value}86087000/json/`;
+
+        if(cepValido(cep.value)){
+            const dados = await fetch(url);
+            const addres = await dados.json();
+
+            if(addres.hasOwnProperty('erro')){
+                alert('CEP Não encontrado');
+            }else{
+                preencherFormulario(addres);
+            }
+
+        }else{
+            alert("CEP Incorreto!");
+        }
 }
+
+// Adiciona escutador para executar consumo de API da ViaCEP
