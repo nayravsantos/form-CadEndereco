@@ -26,3 +26,9 @@ const preencherFormulario = (endereco) =>{
     document.getElementById('localidade').value = endereco.localidade;
     document.getElementById('uf').value = endereco.uf;
 }
+
+// Função de consumo de API ViaCEP
+const pesquisarCEP = async() =>{
+    limparFormulario();
+    const url = `http://viacep.com.br/ws/86087000/json/`;
+}
