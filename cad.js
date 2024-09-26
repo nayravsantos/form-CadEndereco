@@ -16,13 +16,11 @@ const limparFormulario = () =>{
  //cria regra de expressão regular (Regex) para testar valor informado pelo usuário
 const eNumero = (numero) => /^[0-9]+$/.test(numero); // É uma função que verifica o campo de cep que possui números de 0 a 9
 
-//
+// 
 const cepValido = (cep) => cep.length == 8 && eNumero(cep); // Length verificação a quantidade de caracteres do campo cep
 
 // Função para preencher formulário como campos da API
 const preencherFormulario = (endereco) =>{
-
-// Trazer dados
     document.getElementById('logradouro').value = endereco.logradouro;
     document.getElementById('bairro').value = endereco.bairro;
     document.getElementById('localidade').value = endereco.localidade;
