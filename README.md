@@ -1,6 +1,8 @@
 # **Formulário de Cadastro de Endereço**
 Este projeto é um slimpres formulário de cadastro de endereço contruído com HTML, Bootstrap e JavaScript. O formulário coleta informaçães como CEP, logradouro, número, bairro, complemento, cidade e estado, facilitando o preenchimento autómatico de dados de endereço.
 
+![](img.png)
+
 ## **Tecnologias Utilizadas**
 - ``HTML5:`` Estrutura do documento.
 - ``Bootstrap 5.3.2:`` Utilizado para estilizar o formulário com uma aparência moderna e responsiva.
@@ -72,3 +74,7 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
 | ``json`` | O ``JSON`` objeto namespace contém métodos estáticos para analisar valores e convertê-los em ``JavaScript Object Notation`` ( ``JSON`` ).
 | ``Object.prototype.hasOwnProperty()`` | O método ``hasOwnProperty()`` retorna um booleano indicando se o objeto possui a propriedade especificada como uma propriedade definida no próprio objeto em questão (ao contrário de uma propriedade herdada).
 | ``length`` | A propriedade ``length`` de um objeto ``String`` contém o comprimento da string. ``length`` é uma propriedade ``read-only`` (somente leitura) de instâncias de string.
+| ``.value`` | ``.value`` é uma propriedade em JavaScript que recupera o valor atual de um campo de entrada em um formulário . Essencialmente, ele retorna o valor inserido em um elemento de entrada HTML, como uma caixa de texto.
+
+### **Autor:**
+[Nayra Vitória dos Santos](https://github.com/nayravsantos)
