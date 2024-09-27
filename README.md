@@ -122,5 +122,8 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
 }
 ```
 
-### **Autor:**
+### **Autores:**
+
 [Nayra Vitória dos Santos](https://github.com/nayravsantos)
+
+**Professor:** Leonardo Santiago Sidon da Rocha
