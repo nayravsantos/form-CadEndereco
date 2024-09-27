@@ -3,7 +3,26 @@ Este projeto é um slimpres formulário de cadastro de endereço contruído com 
 
 ![](img.png)
 
+## **Lógica de Funcionamento**
+
+1. O usuário insere o CEP no campo de entrada.
+
+2. Após o usuário sair do campo de entrada (evento ``focusout``), a função ``pesquisarCep()`` é chamada.
+
+3. O CEP é validado para ter certeza de que é um número com 8 dígitos.
+
+4. Se válido, a aplicação faz uma requisição à API ViaCEP.
+
+5. Se o CEP for encontrado, os campos de endereço no formulário são preenchidos. Se não for encontrado ou for inválido, uma mensagem de alerta é exibida.
+
 ## **Tecnologias Utilizadas**
+<div style="display: inline_block"><br>
+   <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+   <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg">
+   <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+ </div>
+<br>
+
 - ``HTML5:`` Estrutura do documento.
 - ``Bootstrap 5.3.2:`` Utilizado para estilizar o formulário com uma aparência moderna e responsiva.
 - ``JavaScript:`` (Opcional) Pode ser utilizado para preencher automaticamente os campos do formulário com base em dados fornecidos, como ao buscar o endereço via CEP.
@@ -38,9 +57,6 @@ Este projeto é um slimpres formulário de cadastro de endereço contruído com 
 - ``Intergração com API (opcinal):`` O formulário pode ser facilmente adaptado para preencher automaticamente os campos com dados fornecidos por uma API de consulta de CEP, como ViaCEP.
 - ``Validação Simples:`` Validação pode ser facilmente adicionada aos campos para garantir que os dados estejam corretos.
 
-## **Explicação**
-* ``pesquisarCep()`` | Existem necessidades, por exemplo um cadastramento online onde o cliente desconhece o CEP da sua rua e será necessário realizar uma pesquisa para verificar a existência de um CEP que corresponda ao endereço. Para consultar um CEP na base de dados são necessários três parâmetros obrigatórios (UF, Cidade e Logradouro), sendo que para Cidade e Logradouro também é obrigatório um número mínimo de três caracteres a fim de evitar resultados extremamente abrangentes.
-
 ### **Exemplo de Preenchimento Automático via API de CEP:**
  
 ```javascript
@@ -65,16 +81,46 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
   }
 });
 ```
-## **Códigos**
+
+## **Estrutura do Código**
+
+### **Funções Principais:**
+
+1. ``limparFormulario():`` | Limpa os campos do formulário relacionados ao endereço (logradouro, bairro, localidade, estado).
+2. ``preencherFormulario(endereco):`` | Preenche os campos do formulário com os dados recebidos da API (logradouro, bairro, localidade, estado).
+
+3. ``eNumero(numero):`` | Verifica se a string fornecida contém apenas números, usando uma expressão regular.
+
+4. ``cepValido(cep):`` | Verifica se o CEP possui exatamente 8 dígitos e é numérico.
+
+5. ``pesquisarCep()`` | Existem necessidades, por exemplo um cadastramento online onde o cliente desconhece o CEP da sua rua e será necessário realizar uma pesquisa para verificar a existência de um CEP que corresponda ao endereço. Para consultar um CEP na base de dados são necessários três parâmetros obrigatórios (UF, Cidade e Logradouro), sendo que para Cidade e Logradouro também é obrigatório um número mínimo de três caracteres a fim de evitar resultados extremamente abrangentes.
+ 
+
  | Elementos: | Explicações: |
 | --- | --- |
 | ``await`` | O operador ``await`` é utilizado para esperar por uma ``Promise``. Ele pode ser usado apenas dentro de uma ``async function``.
 | ``async function`` | A declaração ``async function`` define uma função assíncrona, que retorna um objeto.
-| ``fetch()`` | O método global ``fetch()`` inicia o processo de busca de um recurso da rede, retornando uma promessa que é cumprida assim que a resposta estiver disponível.
+| ``fetch`` | O método global ``fetch()`` inicia o processo de busca de um recurso da rede, retornando uma promessa que é cumprida assim que a resposta estiver disponível.
 | ``json`` | O ``JSON`` objeto namespace contém métodos estáticos para analisar valores e convertê-los em ``JavaScript Object Notation`` ( ``JSON`` ).
-| ``Object.prototype.hasOwnProperty()`` | O método ``hasOwnProperty()`` retorna um booleano indicando se o objeto possui a propriedade especificada como uma propriedade definida no próprio objeto em questão (ao contrário de uma propriedade herdada).
+| ``hasOwnProperty`` | O método ``hasOwnProperty()`` retorna um booleano indicando se o objeto possui a propriedade especificada como uma propriedade definida no próprio objeto em questão (ao contrário de uma propriedade herdada).
 | ``length`` | A propriedade ``length`` de um objeto ``String`` contém o comprimento da string. ``length`` é uma propriedade ``read-only`` (somente leitura) de instâncias de string.
-| ``.value`` | ``.value`` é uma propriedade em JavaScript que recupera o valor atual de um campo de entrada em um formulário . Essencialmente, ele retorna o valor inserido em um elemento de entrada HTML, como uma caixa de texto.
+| ``value`` | ``.value`` é uma propriedade em JavaScript que recupera o valor atual de um campo de entrada em um formulário . Essencialmente, ele retorna o valor inserido em um elemento de entrada HTML, como uma caixa de texto.
+
+### **Exemplo de Resposta da API ViaCEP:**
+```json
+{
+  "cep": "01001-000",
+  "logradouro": "Praça da Sé",
+  "complemento": "lado ímpar",
+  "bairro": "Sé",
+  "localidade": "São Paulo",
+  "uf": "SP",
+  "ibge": "3550308",
+  "gia": "1004",
+  "ddd": "11",
+  "siafi": "7107"
+}
+```
 
 ### **Autor:**
 [Nayra Vitória dos Santos](https://github.com/nayravsantos)
