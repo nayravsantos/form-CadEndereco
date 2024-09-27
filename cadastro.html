@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
- 
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -10,71 +10,63 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body class="bg-secondary.bg-gradient">
- 
+
     <div class="container">
-        <br>
-        <h3>Dados de Endereço</h3>
- 
- 
-        <div class="col-md-2">
-            <label for="cep" class="form-label">CEP</label>
-            <input type="text" class="form-control" id="cep">
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <label for="cep" class="form-label">Rua</label>
-                <input type="text" class="form-control" id="logradouro" placeholder="Rua da Amêndoas">
+        <form action="">
+            <br>
+            <h3>Dados de Endereço</h3>
+
+
+            <div class="col-md-2">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep">
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="cep" class="form-label">Rua</label>
+                    <input type="text" class="form-control" id="logradouro" placeholder="Rua da Amêndoas">
+                </div>
+                <br>
+
+                <div class="col-md-1">
+                    <label for="cep" class="form-label">Nº</label>
+                    <input type="text" class="form-control" id="numero" placeholder="nº 0">
+                </div>
+                <br>
+
+                <div class="col-md-3">
+                    <label for="cep" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairro" placeholder="Apartamento, hotel, casa, etc.">
+                </div>
             </div>
             <br>
- 
-            <div class="col-md-1">
-                <label for="cep" class="form-label">Nº</label>
-                <input type="text" class="form-control" id="numero" placeholder="nº 0">
+            <div class="row">
+                <div class="col-2">
+                    <label for="inputAddress2" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complemento">
+                </div>
+                <br>
+
+                <div class="col-md-4">
+                    <label for="inputCity" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="localidade">
+                </div>
+                <br>
+
+                <div class="col-md-2">
+                    <label for="inputCity" class="form-label">Estado</label>
+                    <input type="text" class="form-control" id="Uf">
+                </div>
             </div>
             <br>
- 
-            <div class="col-md-3">
-                <label for="cep" class="form-label">Bairro</label>
-                <input type="text" class="form-control" id="bairro" placeholder="Bairro Carangueijos">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
-        </div>
-        <br>
- 
-        <div class="col-8">
-            <label for="inputAddress2" class="form-label">Complemento</label>
-            <input type="text" class="form-control" id="complemento">
-        </div>
-        <br>
- 
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">Cidade</label>
-            <input type="text" class="form-control" id="localidade">
-        </div>
-        <br>
- 
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">Estado</label>
-            <input type="text" class="form-control" id="uf">
-        </div>
-        <br>
- 
-        <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Lembre de mim
-                </label>
-            </div>
-            <br>
- 
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
         </form>
     </div>
+    <script src="cad.js"></script>
 </body>
- 
+
 </html>
