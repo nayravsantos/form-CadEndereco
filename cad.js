@@ -43,5 +43,5 @@ const pesquisarCep = async() => {
     }
 }
  
-//Adicionando um evento DOM, no input CEP... 1- passo
+//Adicionando um evento DOM, no input CEP... 1- passo 
 document.getElementById('cep').addEventListener('focusout', pesquisarCep);
