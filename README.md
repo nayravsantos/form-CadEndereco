@@ -11,7 +11,7 @@ Este projeto é um slimpres formulário de cadastro de endereço contruído com 
 
 3. O CEP é validado para ter certeza de que é um número com 8 dígitos.
 
-4. Se válido, a aplicação faz uma requisição à API ViaCEP.
+4. Se válido, a aplicação faz uma requisição à API ViaCEP https://viacep.com.br/.
 
 5. Se o CEP for encontrado, os campos de endereço no formulário são preenchidos. Se não for encontrado ou for inválido, uma mensagem de alerta é exibida.
 
@@ -54,7 +54,7 @@ Este projeto é um slimpres formulário de cadastro de endereço contruído com 
 - ``Complemento:`` Informação extra opcional (exemplo: apartamento, bloco).
 - ``Cidade:`` Nome da cidade.
 - ``Estado (UF):`` Unidade Federativa (UF) do endereço. 
-- ``Intergração com API (opcinal):`` O formulário pode ser facilmente adaptado para preencher automaticamente os campos com dados fornecidos por uma API de consulta de CEP, como ViaCEP.
+- ``Intergração com API:`` O formulário pode ser facilmente adaptado para preencher automaticamente os campos com dados fornecidos por uma API de consulta de CEP, como ViaCEP.
 - ``Validação Simples:`` Validação pode ser facilmente adicionada aos campos para garantir que os dados estejam corretos.
 
 ### **Exemplo de Preenchimento Automático via API de CEP:**
@@ -126,4 +126,4 @@ fetch(`https://viacep.com.br/ws/${cep}/json/`)
 
 [Nayra Vitória dos Santos](https://github.com/nayravsantos)
 
-**Professor:** Leonardo Santiago Sidon da Rocha
+[Leonardo Santiago Sidon da Rocha](https://github.com/leonardossrocha)
